@@ -1,0 +1,14 @@
+table,
+tr,
+th,
+td {
+    /*border: 2px solid grey;
+    border-collapse: collapse;*/
+    padding: 5px;
+}
+
+td,
+th {
+    background: bisque;
+    color: #555555;
+}

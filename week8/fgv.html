@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        console.log(mySampleVariable);
+        var mySampleVariable = 10;
+
+        //sampleFuncion();   -   fgv is hoisting-olódik, előbb is meghívhatom minthogy deklarálom
+
+        function sampleFuncion() {
+            console.log(sampleLocalVariable);
+            var sampleLocalVariable = 'local';
+            console.log(sampleLocalVariable);
+        }
+        //sampleFuncion();
+
+        //console.log(sampleLocalVariable);          Reference error
+
+        // Lehet anonim is
+        var functionExpression =
+            function sampleFuncion() { // hozzárendelhetjük változóhoz, functionExpression-t már csak deklarálás után tudom meghívni
+                console.log(sampleLocalVariable);
+                var sampleLocalVariable = 'local';
+                console.log(sampleLocalVariable);
+            }
+
+        functionExpression();
+
+        function sumTwoValue(a, b) {
+            return a + b;
+        }
+
+        function subtractTwoValue(a, b) {
+            return a - b;
+        }
+
+        function divideSumAndSubtractTwoValue(sumCallback, subtractCallback, a, b) {
+            console.log(sumCallback(a, b) / subtractCallback(a, b));
+        }
+
+        divideSumAndSubtractTwoValue(sumTwoValue, subtractTwoValue, 100, 10);
+
+        var arr = [3454, 67685, 24352, 78578, 345, 6, 43];
+        console.log(arr.sort());
+        console.log(arr.sort(function (a, b) { // sort(Callback function)
+            return a - b;
+        }));
+
+        function curly(a, b) { // function declaration
+            console.log('Function ready: ');
+            return function () {
+                console.log(a - b);
+                return a - b;
+            }
+        }
+
+        curly();
+
+        var returnValue = curly(100, 10); // funtion expression
+        console.log(typeof returnValue);
+        returnValue();
+
+        // curly way
+        console.log(curly(100, 10)());
+        // CLOSURE  / ZÁRVÁNY -  nem törli a functionben levő változót, ha egy belső fgvény hivatkozik rá
+
+        // IIFE  Inmediately Invoked Function Expression
+        (function IIFE(a, b) {
+            console.log(a + b);
+        })(10, 30);
+
+        var getTheLength = function (stringArray) {
+            var longestString = stringArray[0];
+            //var stringLength;
+            for (var i = 0; i < stringArray.length; i++) {
+                if (longestString.length < stringArray[i].length) {
+                    longestString = stringArray[i];
+                    //stringLength = longestString.length;
+                }
+            }
+            return function () {
+                for (var i = 0; i < longestString.length; i++) {
+                    console.log(longestString);
+                }
+            };
+        };
+
+        // var getTheLength = function (stringArray) {
+        //     var longestString = { // gondolkodj inkább objektumokban a több változó helyett
+        //         theValue: '',
+        //         stringLength: 0
+        //     };
+        //     for (var i = 0; i < stringArray.length; i++) {
+        //         if (longestString.theValue.length < stringArray[i].length) {
+        //             longestString.theValue = stringArray[i];
+        //             longestString.stringLength = stringArray[i].length;
+        //         }
+        //     }
+        //     return function () {
+        //         for (var i = 0; i < longestString.stringLength; i++) {
+        //             console.log(longestString.theValue);
+        //         }
+        //     };
+        // };
+
+        var arr = ['mama', 'nagymama', 'ükmama', 'dédmama'];
+
+        //console.log(getTheLength(arr));
+        getTheLength(arr)();
+    </script>
+</body>
+
+</html>

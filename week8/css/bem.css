@@ -1,0 +1,9 @@
+.article__image {
+    max-width: 20vw;
+}
+
+.article {
+    display: inline-block;
+    position: relative;
+    top: 0;
+}

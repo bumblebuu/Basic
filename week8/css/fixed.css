@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+.h1 {
+    font-size: 40px;
+    color: #fff;
+}
+
+.header {
+    background-color: #666;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+    top: 0;
+}
+
+main {
+    position: relative;
+    top: 100px;
+}

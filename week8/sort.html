@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rendezés</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- POSITION -->
+
+    <main>
+        <div class="col col--red">
+            content 1
+        </div>
+        <div class="col col--blue col--front">
+            content 2
+        </div>
+        <div class="col col--red">
+            content 3
+        </div>
+        <div class="col col--yellow">
+            <div class="col col--green">
+                content 4
+            </div>
+        </div>
+       
+    </main>
+
+
+    <script>
+        var users = [{
+                name: 'Gizi',
+                age: 21
+            },
+            {
+                name: 'Mari',
+                age: 26
+            },
+            {
+                name: 'Anna',
+                age: 17
+            },
+            {
+                name: 'Panni',
+                age: 15
+            }
+        ];
+
+
+        // sima rendezés buborék nélkül, NE HASZNÁLD
+        function increasingByAge(users) {
+            for (var i = 0; i < users.length - 1; i++) {
+                for (var j = i + 1; j < users.length; j++) {
+                    if (users[i].age > users[j].age) {
+                        var temp = users[i];
+                        users[i] = users[j];
+                        users[j] = temp;
+                    }
+                }
+            }
+            return users;
+        }
+
+        console.log(increasingByAge(users));
+
+
+
+
+        // buborékos , kicsit más mint Imivel
+        function increasingByAgeBubble(users) {
+            for (var i = 0; i < users.length - 1; i++) {
+                for (var j = 0; j < users.length - i - 1; j++) {
+                    if (users[j].age > users[j + 1].age) {
+                        //swap(&arr[j], &arr[j+1]);
+                        var temp = [users[j], users[j + 1]];
+                        users[j] = temp[1];
+                        users[j + 1] = temp[0];
+                    }
+                }
+            }
+            return users;
+        }
+
+        console.log(increasingByAgeBubble(users));
+
+
+
+        // sort-al, callback functionnal
+        function compareFunction(a, b) {
+            return a.age - b.age;
+        }
+
+        console.log(users.sort(compareFunction));
+
+
+        //HF:
+        // javított buborékos rendezés
+        // bináris avagy logaritmikus keresés -> hogyan működik, milyen feltételei vannak
+        // quick sort
+    </script>
+</body>
+
+</html>

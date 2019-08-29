@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+/* propertiket abc sorrendben adjáok meg, úgy könnyebb megtalálni*/
+
+.col {
+    height: 300px;
+    position: relative;
+    width: 300px;
+}
+
+.col--red {
+    background: #F00;
+}
+
+.col--blue {
+    background: #00F;
+    left: 50px;
+    top: 50px;
+    /* negatív érték is megadható */
+}
+
+.col--front {
+    z-index: 1;
+    /* befolyásolja, hogy melyik elem, milyen közel legyen a felhasználóhoz 0(legtávolabb)-1(legközelebb) */
+}
+
+.col--yellow {
+    background: #FF0;
+    position: static;
+}
+
+.col--green {
+    background: #0F0;
+    height: 100px;
+    width: 100px;
+    /* top: 100px;
+    left: 100px; */
+    position: absolute;
+    /* left, top és bottom, right tulajdonságokat is kapunk */
+    /* az abszolút a legközelebbi nem statikusan pozicionált szülőhöz viszonyít */
+    top: 0;
+    bottom: 0;
+}

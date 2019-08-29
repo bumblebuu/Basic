@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        /*var sampleStringPrimitive = 'Szöveg'; // EZT HASZNÁLJUK
+        var sampleStringObject = new String('Szöveg');
+        // new Boolen, new Number
+        console.log(sampleStringPrimitive.length);
+        console.log(sampleStringObject.length);
+        console.log(sampleStringObject);
+
+        var boolenVariable = true;
+        if (boolenVariable) { // =  if (boolenVariable === true){
+            console.log('true');
+        }
+
+        var nullPrimitive = null;
+        if (nullPrimitive) { // null és undefined false-ként viselkedik
+            console.log('A feltétel igaz!')
+        }
+        if (!nullPrimitive) {
+            console.log('A feltétel igaz!')
+        }
+
+
+        function trueOrFalse(expr) {
+            return expr ? "true" : "false";
+        }
+
+        console.log('undefined, null, true, false:');
+        console.log(trueOrFalse(undefined)); // false
+        console.log(trueOrFalse(null)); // false
+        console.log(trueOrFalse(true)); // true
+        console.log(trueOrFalse(false)); // false
+
+        console.log('+0, -0, NaN, number:');
+        console.log(trueOrFalse(0)); // false
+        console.log(trueOrFalse(-0)); // false
+        console.log(trueOrFalse(NaN)); // false
+        console.log(trueOrFalse(1)); // true
+
+        console.log('Objects:');
+        console.log(trueOrFalse({})); // true (an object is always true)
+        console.log(trueOrFalse(new String(""))); // true (an object is always true)
+        console.log(trueOrFalse(new Number(1))); // true (an object is always true)
+        console.log(trueOrFalse(new Number(0))); // true (an object is always true)
+
+        console.log('Strings:');
+        console.log(trueOrFalse('')); // false
+        console.log(trueOrFalse('a')); // true
+
+        // isNan helyett inkább használjuk a Number.isNaN-t, mert ez a típust is vizsgálja
+
+        console.log(Number('123aaa')); // NaN
+        console.log(parseInt('123aaa')); // 123
+
+        // hf: Number konstruktoros console.log-okat parseInt-esnként kiiratni
+
+        console.log(Number(undefined)); // NaN        console.log(Number());
+        console.log(Number(null)); // 0
+        console.log(Number(true)); // 1
+        console.log(Number(false)); // 0
+        console.log(Number(10)); // 10
+        console.log(Number('abc')); // NaN
+        console.log(Number('100')); // 100
+        console.log(Number(new Object('a'))); // NaN
+        console.log(Number(new Object('1'))); // 1
+        console.log(Number('cifra')); // NaN
+        */
+
+        console.log(parseInt(undefined)); // NaN 
+        console.log(parseInt(null)); // NaN
+        console.log(parseInt(true)); // NaN
+        console.log(parseInt(false)); // NaN
+        console.log(parseInt(10)); // 10
+        console.log(parseInt('abc')); // NaN
+        console.log(parseInt('100')); // 100
+        console.log(parseInt(new Object('a'))); // NaN
+        console.log(parseInt(new Object('1'))); // 1
+        console.log(parseInt('cifra')); // NaN
+
+        console.log({} === {}); // always false!!!
+        const x = {};
+        const y = x;
+        console.log(x === y); // true
+    </script>
+    <script>
+        var para = 10;
+        var paraArr = [1, 2, 3];
+
+        function passParameters(value) {
+            // value =100; - ne csinálj ilyet
+            // value.push(4);
+            value = 'value';
+            console.log('Függvényen belül: ' + value);
+        };
+
+        //passParameters(para);
+        passParameters(paraArr);
+        //console.log('Globálisan: ' + para);
+        console.log('Globálisan: ' + paraArr);
+
+        // typeof -> operátor
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+h1,
+h2,
+h3 {
+    color: #f00;
+}
+
+.red {
+    color: #F00;
+}
+
+p {
+    background: #ff0;
+    color: #00F;
+    /* !important-al, előre hozhatod a fontosságát, de inkább ne! */
+}
