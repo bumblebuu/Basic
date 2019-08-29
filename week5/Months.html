@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hónapok</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Hónapok</legend>
+        <label for="month">Melyik hónap?</label>
+        <select name="month" id="month">
+            <option value="1">Január</option>
+            <option value="2">Február</option>
+            <option value="3">Március</option>
+            <option value="4">Április</option>
+            <option value="5">Május</option>
+            <option value="6">Június</option>
+            <option value="7">Július</option>
+            <option value="8">Augusztus</option>
+            <option value="9">Szeptember</option>
+            <option value="10">Október</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <button onclick="HowManyDays()">Hány nap van benne?</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Szökőévek is</legend>
+        <label for="year">Évszám</label>
+        <input type="number" name="year" id="year">
+        <label for="month2">Melyik hónap?</label>
+        <select name="month2" id="month2">
+            <option value="1">Január</option>
+            <option value="2">Február</option>
+            <option value="3">Március</option>
+            <option value="4">Április</option>
+            <option value="5">Május</option>
+            <option value="6">Június</option>
+            <option value="7">Július</option>
+            <option value="8">Augusztus</option>
+            <option value="9">Szeptember</option>
+            <option value="10">Október</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <button onclick="HowManyDays2()">Hány nap van benne?</button>
+    </fieldset>
+
+    <script src="/js/Months.js"></script>
+
+</body>
+
+</html>

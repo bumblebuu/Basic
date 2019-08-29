@@ -1,0 +1,72 @@
+.ActiveView {}
+
+.View {}
+
+.ActionLink {
+    margin: 0 4px;
+    padding: 0 4px;
+    white-space: nowrap;
+}
+
+#ProductListContainer {}
+
+.ProductListItemVisualizer {}
+
+.ProductDetailsVisualizer {}
+
+#OrderItemListContainer {}
+
+.OrderItemListItemVisualizer {}
+
+.OrderItemDetailsVisualizer {}
+
+#TotalPriceVisualizer {
+    text-align: right;
+}
+
+#vwProductList,
+#vwProductDetails,
+#vwOrderItemList,
+#vwOrderItemDetails {
+    background-color: rgb(113, 189, 113);
+}
+
+img {
+    height: 60px;
+}
+
+#vwProductList tr,
+#vwProductDetails table,
+#vwOrderItemList table,
+#vwOrderItemDetails table {
+    display: inline-block;
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: grey 0 0 0 2px;
+    margin: 20px;
+    background-color: rgb(160, 157, 157);
+    min-width: 15%;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#vwProductList tr td {
+    display: block;
+    text-align: center;
+}
+
+#vwProductList tr:first-child,
+#vwProductList td:first-child {
+    display: none;
+}
+
+.rowFlex {
+    display: flex;
+    flex-direction: row;
+}
+
+#divSearch {
+    position: absolute;
+    right: 0px;
+    margin: 20px;
+}

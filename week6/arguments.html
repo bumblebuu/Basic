@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ARGUMENTS</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // arguments=tomb, a függvénynek híváskor átadott paramétereket tartalmazza, tömbböt csinál belőlök
+        function Sum() {
+            var osszeg = 0;
+
+            for (var i = 0; i < arguments.length; i++) {
+                if (isNaN(parseFloat(arguments[i])) == true) {
+                    // alert('Számot írj pls!');
+                    throw new Error('Számot írj pls!'); // ez durva büntetés, kivétel dobás, bevett eszköz hibakezelésre
+                }
+                osszeg += arguments[i];
+            }
+            return osszeg;
+        }
+        var x = Sum(1, 2, 3, 4, 'krumpli');
+        console.log(x);
+
+        function Concat() {
+            var s = '';
+
+            for (var i = 0; i < arguments.length; i++) {
+                s += arguments[i];
+            }
+            return s;
+        }
+        var y = Concat('Ne', ' ', 'aggódj', '!');
+        console.log(y);
+    </script>
+</body>
+
+</html>

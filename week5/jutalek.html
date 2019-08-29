@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Jutalék</h3>
+    <label for="bekertEladasiOsszeg">Mennyi volt a havi eladás összege?</label>
+    <input type="number" id="bekertEladasiOsszeg">
+    <button onclick="Jutalek()">Mennyit kapnak az eladók?</button>
+
+    <label for="bekertEladasiOsszegPlusz">Mennyi volt a havi eladás összege?</label>
+    <input type="number" id="bekertEladasiOsszegPlusz">
+    <button onclick="JutalekPlusz()">Mennyit kapnak az eladók?</button>
+    <br>
+    <h3>Villanyóra</h3>
+    <label for="elozoAllas">Előző állás</label>
+    <input type="number" id="elozoAllas">
+    <label for="jelenlegiAllas">Jelenlegi állás</label>
+    <input type="number" id="jelenlegiAllas">
+    <button onclick="VillanySzamla()">Számold ki</button>
+
+    <script src="/js/jutalek.js"></script>
+
+</body>
+
+</html>

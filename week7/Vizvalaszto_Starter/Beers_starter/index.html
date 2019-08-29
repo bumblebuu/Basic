@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KAMU WebShop</title>
+    <link rel="stylesheet" type="text/css" href="design/main.css">
+</head>
+
+<body>
+    <nav>
+        <a href="Product/List" class="ActionLink" data-action="ProductList">Product list</a>
+        <a href="OrderItem/List" class="ActionLink" data-action="OrderItemList">Order</a>
+    </nav>
+    <div id="vwProductList" class="View ActiveView">
+        <div class="rowFlex">
+            <h2>Product List</h2>
+                <div id="divSearch">
+                <input type="text" placeholder="Search..." id="searchInput">
+                <button id="btnSearch">Search</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Tagline</th>
+                    <th>Photo</th>
+                </tr>
+            </thead>
+            <tbody id="ProductListContainer"></tbody>
+        </table>
+    </div>
+    <div id="vwProductDetails" class="View">
+        <h2>Details</h2>
+        <table>
+            <tbody class="ProductDetailsVisualizer"></tbody>
+        </table>
+    </div>
+    <div id="vwOrderItemList" class="View">
+        <h2>Order</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product</th>
+                    <th>UnitPrice</th>
+                    <th>Quantity</th>
+                    <th>ItemPrice</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th colspan="4">Összesen</th>
+                    <td id="TotalPriceVisualizer">154</td>
+                </tr>
+            </tfoot>
+            <tbody id="OrderItemListContainer"></tbody>
+        </table>
+    </div>
+    <div id="vwOrderItemDetails" class="View">
+        <h2>OrderItem</h2>
+        <table>
+            <tbody class="OrderItemDetailsVisualizer"></tbody>
+        </table>
+    </div>
+    <script>
+        'use strict';
+    </script>
+    <script src="data/dataSource.js"></script>
+    <script src="scripts/Application.js"></script>
+    <script src="scripts/Catalog.js"></script>
+    <script src="scripts/Order.js"></script>
+    <script src="scripts/dataVisualization/productList.js"></script>
+    <script src="scripts/dataVisualization/productDetails.js"></script>
+    <script src="scripts/dataVisualization/orderItemList.js"></script>
+    <script src="scripts/dataVisualization/orderItemDetails.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

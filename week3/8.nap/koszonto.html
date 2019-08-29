@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Köszöntő App</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <label for="txtName">Név:</label>
+            <input type="text" name="txtName" id="txtName" value="Béla">
+        </div>
+        <div>
+            <label for="nudAge">Életkor:</label>
+            <input type="number" name="nudAge" id="nudAge" value="24">
+        </div>
+        <div>
+            <span>Nem:</span>
+            <input type="radio" name="gender" id="rFiu" value="1" checked>
+            <label for="rFiu">Fiú</label>
+            <input type="radio" name="gender" id="rLany" value="2">
+            <label for="rLany">Lány</label>
+        </div>
+        <div>
+            <select name="gender" id="cmbGender" size="5">
+                <!--size-al tudod beállítani hogy többet mutasson egyszerre, ne gördülő lista legyen-->
+                <option value="1">Fiú</option>
+                <option value="2">Lány</option>
+                <option value="3">Egyéb</option>
+                <option value="4">Mindegy</option>
+                <option value="5">Nem adom meg</option>
+            </select>
+        </div>
+        <div>
+            <input type="radio" name="milegyen" value="1" checked>
+            <input type="radio" name="milegyen" value="2">
+            <input type="radio" name="milegyen" value="3">
+        </div>
+        <div>
+            <button type="button" onclick="greatingButton_ClickHandler();">
+                <span>Köszönj!</span>
+                <img src="hello.png" alt="hello" width="20px" height="20px">
+            </button>
+        </div>
+        <div>
+            <input type="button" onclick="AllatOrvosiLo();" value="Állatorvosi ló">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/koszonto.js"></script>
+</body>
+
+</html>

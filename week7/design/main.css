@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(207, 171, 183);
+}
+
+th {
+    background-color: peachpuff;
+    padding: 8px;
+    font-size: 15pt;
+}
+
+tr:nth-child(even) {
+    /* 2n+0*/
+    background-color: papayawhip;
+}
+
+tr:nth-child(odd) {
+    /* 2n+1*/
+    background-color: lightgrey;
+}
+
+/* tbody tr td:nth-child(2n+1) {
+    background-color: papayawhip;
+} */
+
+select {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+td {
+    padding: 3px;
+}
+
+/*
+#basketTable {
+    display: none;
+}
+*/

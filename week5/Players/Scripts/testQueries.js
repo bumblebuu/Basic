@@ -1,0 +1,12 @@
+console.log('AllGoals: ', AllGoals());
+console.log('MinimumAge: ', MinimumAge());
+console.log('MaximumAge: ', MaximumAge());
+console.log('AverageAge: ', AverageAge());
+console.log('OldestPlayer: ', OldestPlayer());
+console.log('Goalkeepers: ', Goalkeepers());
+console.log('HasPlayerFromClub "Loki": ', HasPlayerFromClub('Debrecen'));
+console.log('HasPlayerWithName "Imre": ', HasPlayerWithName('Imre'));
+console.log('FirstPlayerWithName "Ádám": ', FirstPlayerWithName('Ádám'));
+console.log('PlayersWithName "Ádám": ', PlayersWithName('Ádám'));
+console.log('ClubsRepresented: ', ClubsRepresented());
+console.log('PlayersByClub: ', PlayersByClub());

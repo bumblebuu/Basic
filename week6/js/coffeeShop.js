@@ -1,0 +1,397 @@
+var coffeeArray = [{
+    coffeeName: 'Karimikui',
+    origin: 'Kenya',
+    intensity: 8,
+    inStock: 10,
+    pricePerCup: 650,
+    pricePerKg: 8500,
+    ordered: false
+}, {
+    coffeeName: 'Monnai',
+    origin: 'Colorado',
+    intensity: 4,
+    inStock: 21,
+    pricePerCup: 630,
+    pricePerKg: 8000,
+    ordered: false
+}, {
+    coffeeName: 'Olobaio',
+    origin: 'Columbia',
+    intensity: 7,
+    inStock: 1,
+    pricePerCup: 720,
+    pricePerKg: 9500,
+    ordered: false
+}, {
+    coffeeName: 'Purgia',
+    origin: 'Brazilia',
+    intensity: 9,
+    inStock: 18,
+    pricePerCup: 600,
+    pricePerKg: 7400,
+    ordered: false
+}, {
+    coffeeName: 'Rebrugo',
+    origin: 'Portugal',
+    intensity: 5,
+    inStock: 4,
+    pricePerCup: 790,
+    pricePerKg: 9700,
+    ordered: false
+}, {
+    coffeeName: 'Neykolo',
+    origin: 'Brazilia',
+    intensity: 3,
+    inStock: 6,
+    pricePerCup: 680,
+    pricePerKg: 8800,
+    ordered: false
+}, {
+    coffeeName: 'Umbarl',
+    origin: 'Nigeria',
+    intensity: 1,
+    inStock: 2,
+    pricePerCup: 670,
+    pricePerKg: 9100,
+    ordered: false
+}, {
+    coffeeName: 'Virraldo',
+    origin: 'Yemen',
+    intensity: 10,
+    inStock: 11,
+    pricePerCup: 690,
+    pricePerKg: 9200,
+    ordered: false
+}, {
+    coffeeName: 'Maula',
+    origin: 'Kenya',
+    intensity: 6,
+    inStock: 14,
+    pricePerCup: 610,
+    pricePerKg: 8100,
+    ordered: false
+}, {
+    coffeeName: 'Senkero',
+    origin: 'Nigeria',
+    intensity: 7,
+    inStock: 7,
+    pricePerCup: 650,
+    pricePerKg: 8700,
+    ordered: false
+}, {
+    coffeeName: 'Bolva',
+    origin: 'Nigeria',
+    intensity: 5,
+    inStock: 8,
+    pricePerCup: 670,
+    pricePerKg: 8300,
+    ordered: false
+}, {
+    coffeeName: 'Ferrenika',
+    origin: 'Colorado',
+    intensity: 9,
+    inStock: 15,
+    pricePerCup: 570,
+    pricePerKg: 7900,
+    ordered: false
+}, {
+    coffeeName: 'Honka',
+    origin: 'Kenya',
+    intensity: 2,
+    inStock: 12,
+    pricePerCup: 730,
+    pricePerKg: 9300,
+    ordered: false
+}]
+
+function searchingCoffee() {
+    var nodeSearched = document.getElementById('searching');
+    var searchedCoffee = nodeSearched.value;
+    var foundCoffee = [];
+    var van = false;
+
+    for (var i = 0; i < coffeeArray.length; i++) {
+        if (searchedCoffee === coffeeArray[i].coffeeName) {
+            van = true;
+            foundCoffee.push(coffeeArray[i]);
+            alert('A kávé neve: ' + foundCoffee[0].coffeeName + '\n' +
+                'Származási helye: ' + foundCoffee[0].origin + '\n' +
+                'Intenzitása: ' + foundCoffee[0].intensity + '\n' +
+                'Készleten: ' + foundCoffee[0].inStock + ' kg');
+            break;
+        }
+    }
+    if (van == false) {
+        alert('Nem kapható!');
+    }
+}
+
+function searchingCoffeePart() {
+    var nodeSearched = document.getElementById('searchingPart');
+    var searchedCoffee = nodeSearched.value;
+    var foundCoffee = [];
+    var van = false;
+
+    for (var i = 0; i < coffeeArray.length; i++) {
+        if (coffeeArray[i].coffeeName.toLowerCase().indexOf(searchedCoffee.toLowerCase()) > -1) {
+            van = true;
+            foundCoffee.push(coffeeArray[i]);
+        }
+    }
+    if (van == true) {
+        var j = 0;
+        while (j < foundCoffee.length) {
+            alert('A kávé neve: ' + foundCoffee[j].coffeeName + '\n' +
+                'Származási helye: ' + foundCoffee[j].origin + '\n' +
+                'Intenzitása: ' + foundCoffee[j].intensity + '\n' +
+                'Készleten: ' + foundCoffee[j].inStock + ' kg');
+            j++;
+        }
+    }
+    if (van == false) {
+        alert('Nem kapható!');
+    }
+}
+
+function listOfAlmostOut() {
+    var nodeReceivedAmount = document.getElementById('sortByStock');
+    var receivedAmount = parseInt(nodeReceivedAmount.value);
+    var foundCoffee = [];
+    var van = false;
+
+    for (var i = 0; i < coffeeArray.length; i++) {
+        if (receivedAmount >= coffeeArray[i].inStock) {
+            van = true;
+            foundCoffee.push(coffeeArray[i]);
+        }
+    }
+    if (van == true) {
+        var j = 0;
+        while (j < foundCoffee.length) {
+            alert('A kávé neve: ' + foundCoffee[j].coffeeName + '\n' +
+                'Származási helye: ' + foundCoffee[j].origin + '\n' +
+                'Intenzitása: ' + foundCoffee[j].intensity + '\n' +
+                'Készleten: ' + foundCoffee[j].inStock + ' kg');
+            j++;
+        }
+    }
+    if (van == false) {
+        alert('Nincs ilyen kávé.');
+    }
+}
+
+function groupsOfIntensities() {
+    var receivedIntensityArray = document.querySelectorAll('INPUT[name=sortByIntensity]');
+    var receivedIntensity;
+    var intensityArray = [];
+
+    for (var i = 0; i < receivedIntensityArray.length; i++) {
+        if (receivedIntensityArray[i].checked == true) {
+            receivedIntensity = receivedIntensityArray[i].value;
+        }
+    }
+    if (receivedIntensity == 'light') {
+        for (var i = 0; i < coffeeArray.length; i++) {
+            if (coffeeArray[i].intensity <= 3) {
+                intensityArray.push(coffeeArray[i]);
+            }
+        }
+    }
+    if (receivedIntensity == 'mid') {
+        for (var i = 0; i < coffeeArray.length; i++) {
+            if (4 <= coffeeArray[i].intensity && coffeeArray[i].intensity <= 7) {
+                intensityArray.push(coffeeArray[i]);
+            }
+        }
+    }
+    if (receivedIntensity == 'strong') {
+        for (var i = 0; i < coffeeArray.length; i++) {
+            if (coffeeArray[i].intensity >= 8) {
+                intensityArray.push(coffeeArray[i]);
+            }
+        }
+    }
+    var j = 0;
+    while (j < intensityArray.length) {
+        alert('A kávé neve: ' + intensityArray[j].coffeeName + '\n' +
+            'Származási helye: ' + intensityArray[j].origin + '\n' +
+            'Intenzitása: ' + intensityArray[j].intensity + '\n' +
+            'Készleten: ' + intensityArray[j].inStock + ' kg');
+        j++;
+    }
+}
+
+function MostCosty() {
+    var mostCosty = coffeeArray[0];
+
+    for (var i = 0; i < coffeeArray.length; i++) {
+        if (mostCosty.pricePerCup < coffeeArray[i].pricePerCup) {
+            mostCosty = coffeeArray[i];
+        }
+    }
+    alert('A kávé neve: ' + mostCosty.coffeeName + '\n' +
+        'Származási helye: ' + mostCosty.origin + '\n' +
+        'Intenzitása: ' + mostCosty.intensity + '\n' +
+        'Készleten: ' + mostCosty.inStock + ' kg' + '\n' +
+        'Csésze ára: ' + mostCosty.pricePerCup + ' Ft');
+}
+
+function LessCosty() {
+    var lessCosty = coffeeArray[0];
+
+    for (var i = 0; i < coffeeArray.length; i++) {
+        if (lessCosty.pricePerCup > coffeeArray[i].pricePerCup) {
+            lessCosty = coffeeArray[i];
+        }
+    }
+    alert('A kávé neve: ' + lessCosty.coffeeName + '\n' +
+        'Származási helye: ' + lessCosty.origin + '\n' +
+        'Intenzitása: ' + lessCosty.intensity + '\n' +
+        'Készleten: ' + lessCosty.inStock + ' kg' + '\n' +
+        'Csésze ára: ' + lessCosty.pricePerCup + ' Ft');
+}
+
+function AvgCost() {
+    var average = 0;
+    var sum = 0;
+    var part = 0;
+
+    for (var i = 0; i < coffeeArray.length; i++) {
+        sum += coffeeArray[i].pricePerCup;
+        part = (i + 1);
+    }
+    average = sum / part;
+    alert(parseInt(average) + ' Ft');
+}
+
+function ValueInStock() {
+    var AllValue = 0;
+
+    for (var i = 0; i < coffeeArray.length; i++) {
+        AllValue += (coffeeArray[i].inStock * coffeeArray[i].pricePerKg);
+    }
+    alert(AllValue + ' Ft-nyi érték van a boltban');
+}
+
+function ByCountries() {
+    var byCountries = coffeeArray;
+
+    for (var i = 0; i < byCountries.length - 1; i++) {
+        for (var j = i + 1; j < byCountries.length; j++) {
+            if (byCountries[i].origin > byCountries[j].origin) {
+                var temp = [byCountries[i], byCountries[j]];
+                byCountries[j] = temp[0];
+                byCountries[i] = temp[1];
+            }
+
+        }
+    }
+    for (var i = 0; i < byCountries.length - 1; i++) {
+        for (var j = i + 1; j < byCountries.length; j++) {
+            if (byCountries[i].origin == byCountries[j].origin) {
+                if (byCountries[i].coffeeName > byCountries[j].coffeeName) {
+                    var temp = [byCountries[i], byCountries[j]];
+                    byCountries[j] = temp[0];
+                    byCountries[i] = temp[1];
+                }
+
+            }
+        }
+    }
+
+    var result = '';
+    var k = 0;
+    while (k < byCountries.length) {
+        if (result.indexOf(byCountries[k].origin) == -1) {
+            result += '<b>' + byCountries[k].origin + '</b>' + "<br>" +
+                "A kávé neve: " + byCountries[k].coffeeName + "<br>" +
+                "Intenzitása: " + byCountries[k].intensity + "<br>" +
+                "Készleten: " + byCountries[k].inStock + " kg" + "<br>" +
+                "Csésze ára: " + byCountries[k].pricePerCup + " Ft" + '&nbsp' + '<button class="listIt">Rendelés</button>' + "<br>" + "<br>";
+        } else {
+            result += "A kávé neve: " + byCountries[k].coffeeName + "<br>" +
+                "Intenzitása: " + byCountries[k].intensity + "<br>" +
+                "Készleten: " + byCountries[k].inStock + " kg" + "<br>" +
+                "Csésze ára: " + byCountries[k].pricePerCup + " Ft" + '&nbsp' + '<button class="listIt">Rendelés</button>' + "<br>" + "<br>";
+        }
+        k++;
+    }
+    //document.querySelector("#listByCountries").innerHTML = result;
+    return byCountries;
+}
+
+
+
+// NODE-os rész
+
+
+
+//function ByCountriesWithNodes() {
+var nodeUL = document.querySelector('UL');
+var byCountries = ByCountries();
+var nodeLIArray = [];
+
+for (var i = 0; i < byCountries.length; i++) {
+    if (nodeLIArray.indexOf(byCountries[i].origin) == -1) {
+        nodeLIArray.push(byCountries[i].origin);
+    }
+}
+
+for (var i = 0; i < nodeLIArray.length; i++) {
+    var nodeLI = document.createElement('LI');
+    nodeLI.innerHTML = '<b>' + nodeLIArray[i] + '</b>';
+    nodeUL.appendChild(nodeLI);
+    for (var j = 0; j < byCountries.length; j++) {
+        var nodeP = document.createElement('P');
+        if (byCountries[j].origin == nodeLIArray[i]) {
+            nodeP.innerHTML = "A kávé neve: " + byCountries[j].coffeeName + "<br>" +
+                "Intenzitása: " + byCountries[j].intensity + "<br>" +
+                "Készleten: " + byCountries[j].inStock + " kg" + "<br>" +
+                "Csésze ára: " + byCountries[j].pricePerCup + " Ft" + "<br>";
+            nodeLI.appendChild(nodeP);
+            var nodeButton = document.createElement('button');
+            nodeButton.innerText = 'Rendelés' + '\n';
+            nodeButton.id = byCountries[j].coffeeName;
+            nodeButton.addEventListener('click', orderArrayFunction);
+            nodeLI.appendChild(nodeButton);
+
+        }
+
+    }
+
+}
+
+//}
+
+var nodeUL = document.querySelector('UL');
+var nodeButton = nodeUL.querySelectorAll('button');
+var nodeOrderButton = document.querySelector('#myOrder');
+nodeOrderButton.addEventListener('click', makeAListFunction);
+
+function orderArrayFunction() {
+    for (var i = 0; i < nodeButton.length; i++) {
+        if (nodeButton[i].clicked == true) {
+            nodeButton[i].isclicked == true;
+        }
+    }
+}
+
+
+function makeAListFunction() {
+
+    var orderListArray = [];
+    for (var i = 0; i < nodeButton.length; i++) {
+        if (nodeButton[i].clicked == true) {
+            orderListArray.push(nodeButton[i].id);
+        }
+    }
+    console.log(orderListArray);
+}
+/*
+    var orderListArray = orderArrayFunction();
+    var orderList = '';
+    for (var i = 0; i < orderListArray.length; i++) {
+        orderList += orderListArray[i] + ' ';
+    }
+    console.log(orderList);
+}*/

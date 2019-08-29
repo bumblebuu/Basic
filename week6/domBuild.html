@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>Alma</td>
+                <td>Banán</td>
+            </tr>
+            <tr>
+                <td>Citrom</td>
+                <td>Dió</td>
+            </tr>
+            <!--eper füge-->
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        var nodeTR3 = document.createElement('TR');
+        console.log(nodeTR3);
+        var nodeTD3_1 = document.createElement('TD');
+        var nodeTD3_2 = document.createElement('TD');
+        nodeTR3.appendChild(nodeTD3_1);
+        nodeTR3.appendChild(nodeTD3_2);
+        nodeTD3_1.innerText = 'Eper';
+        var nodeFuge = document.createTextNode('Füge');
+        nodeTD3_2.appendChild(nodeFuge);
+        console.log(nodeTR3);
+        var nodeTBody = document.querySelector('tbody');
+        nodeTBody.appendChild(nodeTR3);
+        console.log(nodeTBody);
+        var nodeTRAlma = nodeTBody.querySelectorAll('tr')[0];
+        nodeTBody.removeChild(nodeTRAlma);
+    </script>
+</body>
+
+</html>

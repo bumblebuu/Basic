@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        function FX_1(a, b) {
+            return 2 * a + b;
+        }
+
+        var v_1 = FX_1(2, 3);
+        console.log(v_1);
+
+        var FX_2 = function (a, b) {
+            return 2 * a + b;
+        }
+
+        var v_2 = FX_2(2, 3);
+        console.log(v_2);
+
+        var FX_3 = (a, b) => 2 * a + b;
+        var v_3 = FX_3(2, 3);
+        console.log(v_3);
+
+        var numbers = [123.456789, 9.87654321, 3.147, 256];
+        var formattedNumbers = [];
+        formattedNumbers = numbers.map(item => item.toFixed(2));
+        var arr = formattedNumbers.map(x => parseFloat(x));
+        console.log(numbers);
+        console.log(formattedNumbers);
+        console.log(arr);
+
+        var nevek = ['Szilvi', 'Norbi', 'Dani', 'Szilvi', 'Tomi', 'Timi', 'Tina', 'Krisztina'];
+        var q1 = nevek.filter(item => item === 'Szilvi');
+        var q2 = nevek.filter(item => item.toLowerCase().indexOf('tina') != -1);
+        console.log(q1);
+        console.log(q2);
+
+        var csoport = [{
+            nev: 'Szilvi',
+            kor: 20
+        }, {
+            nev: 'Tina',
+            kor: 21
+        }, {
+            nev: 'Dani',
+            kor: 22
+        }, {
+            nev: 'Tomi',
+            kor: 23
+        }, {
+            nev: 'Norbi',
+            kor: 24
+        }];
+
+        var q3 = csoport.filter(item => item.kor > 22);
+        console.log(q3);
+        var q4 = csoport.filter(item => item.nev.toLowerCase() == 'szilvi');
+        console.log(q4);
+
+        function FiatalCsoportTagok(item) {
+            return item.kor <= 22;
+        }
+
+        var q5 = csoport.filter(FiatalCsoportTagok);
+        console.log(q5);
+
+        // új tömböt hozunk létre, úgy hogy az első ne változzon, eddig a sort megváltoztatta az eredetit
+        var cloneCsoport = csoport.map(x => x);
+
+
+        var q6 = csoport.sort((a, b) => { // lehet a= lho - left hand operand, és b= rho - right -||-
+            var result = 0;
+
+            if (a.nev < b.nev) {
+                result = -1;
+            } else if (a.nev > b.nev) {
+                result = 1;
+            }
+            return result;
+        });
+        console.log(q6);
+        console.log(cloneCsoport);
+    </script>
+</body>
+
+</html>

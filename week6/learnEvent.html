@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events</title>
+    <style>
+        #Toolbar {
+            background-color: gray;
+            padding: 8px;
+        }
+
+        .ToolbarButton {
+            border: 2px outset silver;
+            background-color: silver;
+            padding: 0 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="Toolbar">
+        <span id="ToolbarButton1" class="ToolbarButton">Copy</span>
+        <span id="ToolbarButton2" class="ToolbarButton">Paste</span>
+        <span id="ToolbarButton3" class="ToolbarButton">Cut</span>
+    </div>
+
+    <div id="pnlVicces">
+        Hello World!
+    </div>
+
+    <script type="text/javascript">
+        window.addEventListener('load', window_LoadHandler, false);
+        window.addEventListener('load', window_LoadHandler_2, false);
+
+        function window_LoadHandler() {
+            nodeToolbar = document.querySelector('#Toolbar');
+            var nodeTB1 = document.querySelector('#ToolbarButton1');
+            var nodeTB2 = document.querySelector('#ToolbarButton2');
+            var nodeTB3 = document.querySelector('#ToolbarButton3');
+
+            // nodeTB1.addEventListener('click', TB1_ClickHandler, false);
+            // nodeTB2.addEventListener('click', TB2_ClickHandler, false);
+            // nodeTB1.addEventListener('click', TB_ClickHandler, false);
+            // nodeTB2.addEventListener('click', TB_ClickHandler, false);
+            // nodeTB3.addEventListener('click', TB_ClickHandler, false);
+            nodeToolbar.addEventListener('click', Toolbar_ClickHandler, false);
+        }
+
+        function Toolbar_ClickHandler() {
+            console.log(event);
+        }
+
+        // function TB1_ClickHandler() {
+        //     console.log('Az első gombra klikkeltél!');
+        //     console.log(event);
+        // }
+
+        // function TB2_ClickHandler() {
+        //     console.log('Az második gombra klikkeltél!');
+        //     console.log(event);
+        // }
+
+        // function TB_ClickHandler() {
+        //     // console.log(event.target.innerText, ' feliratú gombra klikkeltél!');
+        //     var sender = event.target;
+        //     switch (sender.id) {
+        //         case 'ToolbarButton1':
+        //             console.log('Copy the file');
+        //             break;
+        //         case 'ToolbarButton2':
+        //             console.log('Paste the file');
+        //             break;
+        //         case 'ToolbarButton3':
+        //             console.log('Cut the file');
+        //             break;
+        //     }
+        //}
+
+        function window_LoadHandler_2() {
+            var nodeViccesDiv = document.querySelector('#pnlVicces');
+            nodeViccesDiv.addEventListener('mouseover', viccesOver, false);
+            nodeViccesDiv.addEventListener('mouseout', viccesOut, false);
+        }
+
+        function viccesOver() {
+            event.target.style.backgroundColor = 'orange';
+            //event.target.parentNode.children[0].style.display = 'none';
+            event.target.parentNode.children[0].style.visibility = 'hidden';
+        }
+
+        function viccesOut() {
+            event.target.style.backgroundColor = 'white';
+            //event.target.parentNode.children[0].style.display = 'block';
+            event.target.parentNode.children[0].style.visibility = 'visible';
+        }
+    </script>
+</body>
+
+</html>

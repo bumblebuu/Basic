@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LEARN LEARN LEARN JSON</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        var autoink = [{
+                markaID: 1,
+                markaNev: 'Ford',
+                tipusok: [{
+                    tipusID: 1,
+                    tipusNev: 'Mondeo',
+                }, {
+                    tipusID: 2,
+                    tipusNev: 'Focus'
+                }]
+            },
+            {
+                markaID: 2,
+                markaNev: 'Opel',
+                tipusok: [{
+                    tipusID: 3,
+                    tipusNev: 'Astra'
+                }, {
+                    tipusID: 4,
+                    tipusNev: 'Corsa'
+                }]
+            }
+        ];
+    </script>
+    <script type="text/javascript">
+        console.log(autoink);
+        console.log(JSON.stringify(autoink)); // 1 paraméteres változat, 1 sornyi string, gépeknek így küldöd az adatot
+        console.log(JSON.stringify(autoink, null, 4));
+        //  enterek, tabok, emberi fogyasztásra alkalmasabb, de több helyet foglal, nem szoktuk használni
+
+        var s = JSON.stringify(autoink);
+        s = s.replace('Opel', 'Vauxhall');
+        console.log(s);
+        var obj = JSON.parse(s);
+        console.log(obj);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var numberArray = [2, 3, 1, 8, 6]
+
+        function Max() {
+            var max;
+
+            max = numberArray[0];
+            for (var i = 0; i < numberArray.length; i++) {
+                if (max < numberArray[i]) {
+                    max = numberArray[i];
+                }
+            }
+            return max;
+        }
+        console.log(Max());
+
+        var stringArray = ['malacka', 'Béla', 'hal', 'Béla', 'kakas']
+
+        function VanEBenneIlyenSzo(mibenKeresunk, mitKeresunk) {
+            var talalt = [];
+            for (var i = 0; i < mibenKeresunk.length; i++) {
+                if (mitKeresunk === mibenKeresunk[i]) {
+                    talalt.push(mibenKeresunk[i]);
+                }
+            }
+            return talalt;
+        }
+        console.log(VanEBenneIlyenSzo(stringArray, 'Béla'));
+    </script>
+</body>
+
+</html>

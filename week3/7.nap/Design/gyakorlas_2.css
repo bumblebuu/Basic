@@ -1,0 +1,29 @@
+* {border:1px solid darkred;}
+nav>a  /* > = közvetlen gyermek*/
+ {
+  background-color:pink;
+  padding:20px;
+  margin-left:10px;
+ }
+nav span
+ {
+  background-color:yellow;
+  padding:20px;
+  margin-left:10px;
+ }
+.KekDoboz
+ {
+  background-color:rebeccapurple;
+ }
+.NagyBetus
+ {
+  font-size:32pt;
+ }
+#MasodikCella
+ {
+  background-color:lime;
+ }
+div
+ {
+  font-style:italic;
+ }

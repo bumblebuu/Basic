@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Táblázat</title>
+    <style>
+        .SargaDoboz {
+            background-color: yellow;
+        }
+
+        .NagyBetus {
+            font-size: 24pt;
+        }
+
+        .PirosKeretes {
+            border: 1px red dotted;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <table>
+        <thead></thead>
+        <tfoot></tfoot>
+        <tbody>
+            <tr>
+                <td>alma</td>
+                <td>banán</td>
+            </tr>
+            <tr>
+                <td id="citromosJegkocka" class="SargaDoboz NagyBetus">citrom</td>
+                <td>dió</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        // console.log(document);
+
+        var nodeTBody = document.getElementsByTagName('tbody')[0];
+        console.log(nodeTBody);
+        var nodelistTD = nodeTBody.querySelectorAll('TD');
+        console.log(nodelistTD);
+        var nodeTR1 = nodeTBody.getElementsByTagName('TR')[0];
+        console.log(nodeTR1);
+        console.log(nodeTR1.children.length);
+        console.log(nodeTR1.childNodes.length);
+        console.info(nodeTR1.parentElement);
+        console.warn(nodeTR1.parentNode);
+        console.warn(nodeTR1.parentNode.parentNode);
+        console.warn(nodeTR1.parentNode.parentNode.parentNode);
+        console.warn(nodeTR1.parentNode.parentNode.parentNode.parentNode);
+        console.warn(nodeTR1.parentNode.parentNode.parentNode.parentNode.parentNode);
+        console.warn(nodeTR1.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+        console.log(nodeTR1.nodeName, ' ', nodeTR1.nodeType, ' ', nodeTR1.nodeValue);
+        var nodeTD1_1 = nodeTR1.children[0];
+        console.log(nodeTD1_1.nodeName, ' ', nodeTD1_1.nodeType, ' ', nodeTD1_1.nodeValue);
+        var nodeText = nodeTD1_1.childNodes[0];
+        console.log(nodeText.nodeName, ' ', nodeText.nodeType, ' ', nodeText.nodeValue);
+        nodeText.nodeValue = "Hello World";
+        nodeTD1_1.innerText = "Viszlát holnap!!! 8)";
+        nodeText = nodeTD1_1.childNodes[0];
+        console.log(nodeText.nodeName, ' ', nodeText.nodeType, ' ', nodeText.nodeValue);
+    </script>
+    <script type="text/javascript">
+        // console.error  -  gondot okoz, nagyon veszélyes, be kell avatkozni
+        // console.warn  -  gondot okoz, veszélyes
+        // console.info  -  információt közöl
+        // console.log  -  csak kiirogatás
+        console.error('Hello World!');
+        console.warn('Hello World!');
+        console.info('Hello World!');
+        console.log('Hello World!');
+
+        console.log('innerText: ', nodeTR1.innerText);
+        console.log('innerHTML: ', nodeTR1.innerHTML);
+        //nodeTR1.innerText = '<td>Nicsak-nicsak</td>';
+        nodeTR1.innerHTML = '<td>Nicsak-nicsak</td>';
+        console.log('innerText: ', nodeTR1.innerText);
+        console.log('innerHTML: ', nodeTR1.innerHTML);
+        var nodeTD2_1 = document.querySelectorAll('TD')[1];
+        console.log(nodeTD2_1);
+        nodeTD2_1 = document.querySelector('#citromosJegkocka');
+        console.log(nodeTD2_1);
+        nodeTD2_1 = document.querySelector('.SargaDoboz');
+        console.log(nodeTD2_1);
+        console.log(nodeTD2_1.getAttribute('id'));
+        //nodeTD2_1.setAttribute('id', 'xy');
+        //var nodeIDattr = nodeTD2_1.getAttributeNode('id');
+        //console.log(nodeIDattr.nodeName, ' ', nodeIDattr.nodeType, ' ', nodeIDattr.nodeValue);
+
+        console.log(nodeTD2_1.classList);
+        nodeTD2_1.classList.add('PirosKeretes');
+        console.log(nodeTD2_1.classList);
+        nodeTD2_1.classList.toggle.remove('NagyBetus'); // toggle : ha van, kieszi, ha nincs békénhagyja
+    </script>
+
+</body>
+
+</html>

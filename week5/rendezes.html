@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        var numberArray = [48, 35, 42, 25, 26, 28];
+
+
+        // SZÁMOKAT NÖVEKVŐBE RENDEZŐ
+        function IncreasingNumbers() {
+            for (var i = 0; i < numberArray.length - 1; i++) {
+                for (var j = i + 1; j < numberArray.length; j++) {
+                    if (numberArray[j] < numberArray[i]) {
+                        var temp = [numberArray[i], numberArray[j]];
+                        numberArray[j] = temp[0];
+                        numberArray[i] = temp[1];
+                    }
+                }
+            }
+            // console.log(numberArray);
+        }
+
+        // SZÁMOKAT CSÖKKENŐBE RENDEZŐ
+        function DecreasingNumbers() {
+            for (var i = 0; i < numberArray.length - 1; i++) {
+                for (var j = i + 1; j < numberArray.length; j++) {
+                    if (numberArray[j] > numberArray[i]) {
+                        var temp = [numberArray[i], numberArray[j]];
+                        numberArray[j] = temp[0];
+                        numberArray[i] = temp[1];
+                    }
+                }
+            }
+            return numberArray;
+        }
+        console.log(DecreasingNumbers());
+    </script>
+</body>
+
+</html>

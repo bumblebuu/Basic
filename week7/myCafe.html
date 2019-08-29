@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/design/myCafe.css">
+    <title>Buddha Cafe</title>
+</head>
+
+<body>
+    <div id="navbar">
+        <nav>
+            <a href="myCafe.html">Főoldal</a>
+            <a href="https://thumbs.gfycat.com/AbsoluteParchedLabradorretriever-size_restricted.gif">Kapcsolatok</a>
+        </nav>
+    </div>
+    <header>
+        <h1>buddha cafe</h1>
+    </header>
+    <main class="columnFlex">
+        <div class="rowFlex">
+            <div id="tableDiv" class="flexStart">
+                <h1>KÁVÉINK</h1>
+                <table id="coffeeTable">
+                    <thead>
+                        <tr>
+                            <th>Név</th>
+                            <th>Származási hely</th>
+                            <th>Intenzitás</th>
+                            <th>Csésze ára</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="searchesDiv flexEnd">
+                <div>
+                    <button id="showFilters">
+                        <img src="/img/filter.png" alt="filter">
+                        SZŰRÉSEK
+                    </button>
+                </div>
+                <div>
+                    <button id="allCoffeeButton">
+                        <img src="/img/coffee-grain.png" alt="kávébab">
+                        <span>Minden Kávé</span>
+                        <img src="/img/coffee-grain.png" alt="kávébab">
+                    </button>
+                </div>
+                <div>
+                    <label for="nameSearch">Keress rá a kávé nevére</label>
+                    <input type="text" id="nameSearch">
+                    <button id="nameSearchButton">Keresés</button>
+                </div>
+                <div>
+                    <label for="cmbOrigin">Válaszd ki a származási országot</label>
+                    <select id="cmbOrigin"></select>
+                </div>
+                <div>
+                    <span>Válassz intenzitást</span>
+                    <br>
+                    <input type="radio" name="intensityRadio" id="light" value="light">
+                    <label for="light">Gyenge</label>
+                    <input type="radio" name="intensityRadio" id="mid" value="mid">
+                    <label for="mid">Közepes</label>
+                    <input type="radio" name="intensityRadio" id="strong" value="strong">
+                    <label for="strong">Erős</label>
+                </div>
+                <div>
+                    <button id="bestCoffee">Legjobb kávé</button>
+                </div>
+                <div>
+                    <button id="mostCosty">Legdrágább kávé</button>
+                    <button id="lessCosty">Legolcsóbb kávé</button>
+                </div>
+                <div>
+                    <button id="strongest">Legerősebb kávé</button>
+                    <button id="lightest">Leggyengébb kávé</button>
+                </div>
+
+                <div>
+                    <table id="basketTable">
+                        <thead>
+                            <tr>
+                                <th>Kávé neve</th>
+                                <th>Fizetendő</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Összesen :</th>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="rowFlex">
+            <div id="tableForTakeAwayDiv">
+                <h1>Kiszállításra</h1>
+                <table id="coffeeTableTakeAway">
+                    <thead>
+                        <tr>
+                            <th>Név</th>
+                            <th>Származási hely</th>
+                            <th>Intenzitás</th>
+                            <th>Készleten</th>
+                            <th>Ár / Kg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Kávé neve</th>
+                            <th>Fizetendő</th>
+                        </tr>
+                        <tr class="toDeleteWhenNew"></tr>
+                        <tr>
+                            <th>Összesen :</th>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="searchesDiv">
+                <div>
+                    <button id="mostInStock">Amiből a legtöbb van készleten</button>
+                    <br><br>
+                    <button id="lessInStock">Amiből a legkevesebb van készleten</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <a href="https://thumbs.gfycat.com/AbsoluteParchedLabradorretriever-size_restricted.gif">
+                <img src="/img/facebook-logo.png" alt="facebook logó">
+            </a>
+            <a href="https://thumbs.gfycat.com/AbsoluteParchedLabradorretriever-size_restricted.gif">
+                <img src="/img/instagram-logo (1).png" alt="instargram logó">
+            </a>
+            <a href="https://thumbs.gfycat.com/AbsoluteParchedLabradorretriever-size_restricted.gif">
+                <img src="/img/tripadvisor-logotype (1).png" alt="tripadvisor logó">
+            </a>
+        </div>
+    </footer>
+
+    <script src="script/myCafedata.js"></script>
+    <script src="script/myCafeQueries.js"></script>
+    <script src="script/myCafeBuilder.js"></script>
+    <script src="script/myCafeEvents.js"></script>
+</body>
+
+</html>

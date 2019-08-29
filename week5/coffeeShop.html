@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kávézó</title>
+</head>
+
+<body>
+    <label for="searching">Keress rá egy kávéra</label>
+    <input type="text" id="searching">
+    <button onclick="searchingCoffee()">Keresés</button>
+    <br>
+    <label for="searching">Keress rá egy kávé részletére</label>
+    <input type="text" id="searchingPart">
+    <button onclick="searchingCoffeePart()">Keresés</button>
+    <br>
+    <label for="sortByStock">Készletkisöprés</label>
+    <input type="number" id="sortByStock">
+    <button onclick="listOfAlmostOut()">Keresés</button>
+    <br>
+    <label>Milyen intenzitású kávét szeretnél?</label>
+    <input type="radio" name="sortByIntensity" id="light" value="light">
+    <label for="light">Gyenge</label>
+    <input type="radio" name="sortByIntensity" id="mid" value="mid">
+    <label for="mid">Közepes</label>
+    <input type="radio" name="sortByIntensity" id="strong" value="strong">
+    <label for="strong">Erős</label>
+    <button onclick="groupsOfIntensities()">Keresés</button>
+    <br>
+    <button onclick="MostCosty()">Legdrágább kávénk</button>
+    <br>
+    <button onclick="LessCosty()">Legolcsóbb kávénk</button>
+    <br>
+    <button onclick="AvgCost()">Kávéink átlagára</button>
+    <br>
+    <button onclick="ValueInStock()">Összérték a boltban</button>
+    <br>
+    <button onclick="ByCountries()">Országok szerint</button>
+    <p id="listByCountries"></p>
+
+
+
+    <script src="/js/coffeeShop.js"></script>
+</body>
+
+</html>

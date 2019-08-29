@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="number" id="heightOfTriangle">
+    <button onclick="DrawATriangle()">Rajzolj</button>
+    <script>
+        function DrawATriangle() {
+            var nodeHeightOfTriangle = document.getElementById('heightOfTriangle');
+            var h = parseInt(nodeHeightOfTriangle.value);
+            var s = '';
+
+            for (var i = 0; i <= h; i++) {
+                for (var j = 0; j < i; j++) {
+                    s += '*';
+                }
+                s += '\n';
+            }
+            alert(s);
+        }
+    </script>
+</body>
+
+</html>

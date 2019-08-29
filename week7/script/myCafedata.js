@@ -1,0 +1,92 @@
+var coffeeArray = [{
+    coffeeName: 'Karimikui',
+    origin: 'Kenya',
+    intensity: 8,
+    inStock: 10,
+    pricePerCup: 650,
+    pricePerKg: 8500
+}, {
+    coffeeName: 'Monnai',
+    origin: 'Colorado',
+    intensity: 4,
+    inStock: 21,
+    pricePerCup: 630,
+    pricePerKg: 8000
+}, {
+    coffeeName: 'Olobaio',
+    origin: 'Columbia',
+    intensity: 7,
+    inStock: 1,
+    pricePerCup: 720,
+    pricePerKg: 9500
+}, {
+    coffeeName: 'Purgia',
+    origin: 'Brazilia',
+    intensity: 9,
+    inStock: 18,
+    pricePerCup: 600,
+    pricePerKg: 7400
+}, {
+    coffeeName: 'Rebrugo',
+    origin: 'Portugal',
+    intensity: 5,
+    inStock: 4,
+    pricePerCup: 790,
+    pricePerKg: 9700
+}, {
+    coffeeName: 'Neykolo',
+    origin: 'Brazilia',
+    intensity: 3,
+    inStock: 6,
+    pricePerCup: 680,
+    pricePerKg: 8800
+}, {
+    coffeeName: 'Umbarl',
+    origin: 'Nigeria',
+    intensity: 1,
+    inStock: 2,
+    pricePerCup: 670,
+    pricePerKg: 9100
+}, {
+    coffeeName: 'Virraldo',
+    origin: 'Yemen',
+    intensity: 10,
+    inStock: 11,
+    pricePerCup: 690,
+    pricePerKg: 9200
+}, {
+    coffeeName: 'Maula',
+    origin: 'Kenya',
+    intensity: 6,
+    inStock: 14,
+    pricePerCup: 610,
+    pricePerKg: 8100
+}, {
+    coffeeName: 'Senkero',
+    origin: 'Nigeria',
+    intensity: 7,
+    inStock: 7,
+    pricePerCup: 650,
+    pricePerKg: 8700
+}, {
+    coffeeName: 'Bolva',
+    origin: 'Nigeria',
+    intensity: 5,
+    inStock: 8,
+    pricePerCup: 670,
+    pricePerKg: 8300
+}, {
+    coffeeName: 'Ferrenika',
+    origin: 'Colorado',
+    intensity: 9,
+    inStock: 15,
+    pricePerCup: 570,
+    pricePerKg: 7900
+}, {
+    coffeeName: 'Honka',
+    origin: 'Kenya',
+    intensity: 2,
+    inStock: 12,
+    pricePerCup: 730,
+    pricePerKg: 9300
+}]
